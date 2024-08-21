@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.nav li {
+  margin: 0 10px;
+}
+
+.nav li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav li a:hover {
+  color: #ff5722;
+}
+
+.container {
+  padding: 50px;
+}
+
+.content {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.scroll {
+  background-color: #ff5722;
+}
+
+.hover {
+  background-color: #ff5722;
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <div class="content">
+    <h1>Responsive Landing Page</h1>
+    <p> this is my first project of remote interenship ( PRODIFY INFOTECH  ) </p>
+  </div>
+</div>
+
+<script>
+window.addEventListener('scroll', function() {
+  const nav = document.querySelector('.nav');
+  if (window.scrollY > 100) {
+    nav.classList.add('scroll');
+  } else {
+    nav.classList.remove('scroll');
+  }
+});
+
+const links = document.querySelectorAll('.nav li a');
+links.forEach(link => {
+  link.addEventListener('mouseover', function() {
+    link.parentNode.classList.add('hover');
+  });
+  link.addEventListener('mouseout', function() {
+    link.parentNode.classList.remove('hover');
+  });
+});
+</script>
+
+</body>
+</html>
